@@ -55,8 +55,9 @@ void read_input(InputBuffer *input_buffer) {
         exit(EXIT_FAILURE);
     }
 
+    /* getline read and stores newline character too. We don't need it */
     input_buffer->input_length = bytes_read - 1;
-    input_buffer->buffer[bytes_read - 1] = 0;
+    input_buffer->buffer[bytes_read - 1] = '\0';
 }
 
 void close_input_buffer(InputBuffer *input_buffer) {
